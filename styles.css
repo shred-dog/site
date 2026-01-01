@@ -6,79 +6,68 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9; /* Slightly softer background */
+    background-color: #f9f9f9;
     padding: 20px;
     line-height: 1.6;
 }
 
 header {
     text-align: center;
-    color: rgb(55, 110, 250);
     margin: 40px 0 10px;
-    font-family: "Sedgwick Ave", cursive;
 }
 
 h1 {
-    font-size: clamp(3.5rem, 12vw, 6rem); 
-}
-
-p {
-    font-size: 1.1rem;
-    color: #333;
-    text-align: center;
-    margin-bottom: 0px;
-}
-
-/* Links Section */
-.links {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.links a {
+    font-size: clamp(3.5rem, 12vw, 8rem); 
+    font-weight: bold;
+    font-style: italic;
+    font-family: "Sedgwick Ave", cursive;
+    color: #2168e5;
+    margin-top: -35px;
     display: inline-block;
-    vertical-align: top;
-    margin: 10px;
-    width: 90px;
-    height: 65px;
-    padding: 15px 10px;
-    
-    /* Styling */
-    color: #2d2d2d;
-    background-color: #ffffff;
-    text-decoration: none;
-    font-family: "Bangers", system-ui;
-    font-size: 1.2rem;
-    border: 3px solid #2d2d2d;
-    border-radius: 15px;
-    box-shadow: 6px 6px 0px #2d2d2d;
-    transition: all 0.15s ease-in-out;
+    transform: rotate(-5deg)
 }
 
-.links a i {
-    display: block;
-    font-size: 2.2rem;
-    line-height: 1;    
-    margin-bottom: 4px;  
+h2 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem); 
+    font-weight: normal;
+    font-family: "Corben", serif;
+    color: #434343;
+    margin-left: 20px;
 }
 
-.bn {
-    display: block;
-    width: 25px;
-    height: auto;
-    margin: 0 auto 4px; 
+        /* Navigation Links */
+        /* Navigation Links */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: -15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
-.links a:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 4px 4px 0px #2d2d2d;
+nav a {
+    font-size: 1.1rem;
+    font-family: "Corben", serif;
+    color: #434343;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 10;
 }
+
+nav a:hover {
+    color: #2168e5;
+}
+
+
 
 /* Video Grid Layout */
 .video-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 15px;
+    gap: 20px;
     max-width: 800px; 
     margin: 0 auto 50px;
 }
@@ -86,9 +75,9 @@ p {
 .video-container {
     width: 100%; 
     aspect-ratio: 1 / 1; 
-    background-color: #000;
     border-radius: 20px;
-    border: 3px solid #2d2d2d;
+    border: 4px solid #434343;
+    box-shadow: 6px 6px 0px #434343;
     overflow: hidden;
 }
 
@@ -99,10 +88,25 @@ video {
     display: block;
 }
 
+@media (max-width: 1024px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+    }
 
-@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
     .video-grid {
         grid-template-columns: repeat(1, 1fr);
         max-width: 600px;
+    }
+
+    h1 {
+        margin-top: -15px;
     }
 }
