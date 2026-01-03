@@ -125,5 +125,7 @@ video {
 
     h1 {
         margin-top: -20px;
+        font-size: clamp(4.7rem, 16vw, 13.5rem);
+
     }
 }
