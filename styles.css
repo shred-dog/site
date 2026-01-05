@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     padding: 20px;
     line-height: 1.6;
 }
@@ -24,7 +24,7 @@ p {
 }
 
 .body-text {
-    max-width: 750px;
+    max-width: 700px;
     margin: 0 auto 40px;
 }
 
@@ -33,10 +33,10 @@ h1 {
     font-family: "Luckiest Guy", sans-serif;
     color: #2168e5;
     margin-top: -40px;
-    margin-bottom: -50px;
+    margin-bottom: -70px;
     display: inline-block;
     transform: rotate(0deg);
-    line-height: 1.6; /* Less aggressive for desktop */
+    line-height: 1.6;
 }
 
 h2 {
@@ -44,10 +44,13 @@ h2 {
     font-weight: normal;
     font-family: "Corben", serif;
     color: #434343;
-    margin-left: 20px;
 }
 
-        /* Navigation Links */
+.learn-more {
+    margin-top: 30px;
+    margin-bottom: -20px;
+}
+
 nav {
     display: flex;
     justify-content: center;
@@ -62,6 +65,7 @@ nav a {
     font-size: 1.0rem;
     font-family: "Corben", serif;
     color: #434343;
+    background-color: #FFE26E;
     cursor: pointer;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
     z-index: 10;
@@ -70,8 +74,8 @@ nav a {
     box-shadow: 6px 6px 0px #434343;
     padding: 10px;
     text-decoration: none;
-    width: 165px; /* All buttons same width */
-    text-align: center; /* Center the text inside */
+    width: 165px; 
+    text-align: center; 
 }
 
 nav a:hover {
@@ -80,11 +84,15 @@ nav a:hover {
 }
 
 .learn-more-nav {
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 30px;
 }
 
-/* Video Grid Layout */
+.primary-nav {
+    background-color: #2168e5;
+    color: #fff;
+}
+
 .video-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -108,6 +116,14 @@ video {
     display: block;
 }
 
+.image {
+    display: block; 
+    max-width: 350px;
+    width: 100%; 
+    height: auto; 
+    margin: 20px auto;
+}
+
 @media (max-width: 1024px) {
     .video-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -121,21 +137,39 @@ video {
 }
 
 @media (max-width: 600px) {
+    body {
+        padding: 10px; /* Reduce body padding on mobile */
+    }
+
     .video-grid {
         grid-template-columns: repeat(1, 1fr);
         max-width: 600px;
-        padding: 0 40px; /* Add padding to left and right */
-        margin: 5px auto 50px; /* Keep it centered */
+        padding: 0 20px;
+        margin: 5px auto 50px;
     }
 
     h2 {
-        margin-bottom: 20px; /* Add some space below the h2 */
+        margin-bottom: 0; 
+    }
+
+    .learn-more {
+        margin-bottom: -20px; 
+        margin-top: 30px;
     }
    
     h1 {
-        font-size: clamp(4.7rem, 16vw, 13.5rem);
-        margin-top: -8px; /* Positive margin to create space */
+        font-size: clamp(5.875rem, 20vw, 16.875rem);
+        margin-top: 16px;
         margin-bottom: 0;
         line-height: 0.75;
+    }
+
+    .image {
+        max-width: 65%; 
+        margin: 20px auto; 
+    }
+
+    div[style*="max-width: 800px"] {
+        padding: 20px !important; 
     }
 }
